@@ -3,7 +3,7 @@ import yaml
 import base64
 
 # 订阅链接
-sub_url = "https://imperialb.in/r/eav0dzoa"
+sub_url = "https://imperialb.in/r/gynacebx"
 
 # 获取订阅内容
 response = requests.get(sub_url)
