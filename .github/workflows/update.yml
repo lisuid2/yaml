@@ -2,7 +2,7 @@ name: 更新台湾节点订阅
 
 on:
   schedule:
-    - cron: "0 */1 * * *"  # 每6小时自动更新
+    - cron: "0 */6 * * *"  # 每6小时自动更新
   workflow_dispatch:  # 允许手动触发
 
 jobs:
@@ -17,9 +17,11 @@ jobs:
         with:
           python-version: "3.x"
 
+      - name: 安装 Python 依赖
+        run: pip install requests pyyaml  # 这里安装 requests 和 pyyaml
+
       - name: 运行脚本筛选台湾节点
-        run: |
-          python filter_tw.py
+        run: python filter_tw.py
 
       - name: 提交更新
         run: |
